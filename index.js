@@ -3,9 +3,6 @@ var app = express();
 var path = require('path');
 
 app.use(express.static(path.join(__dirname)));
-// app.use("/styles", express.static(__dirname));
-// app.use("/images", express.static(__dirname + '/images'));
-// app.use("/scripts", express.static(__dirname + '/scripts'));
 
 // viewed at based directory http://localhost:8080/
 app.get('/', function (req, res) {
@@ -13,7 +10,8 @@ app.get('/', function (req, res) {
 });
 
 app.get('/.well-known/apple-app-site-association', function (req, res) {
-  res.setHeader('Content-Type', 'application/json');
+  res.header('Content-Type', 'application/json');
+  // res.setHeader('Content-Type', 'application/json');
   res.sendFile(path.join(__dirname + '/.well-known/apple-app-site-association'));
 });
 
