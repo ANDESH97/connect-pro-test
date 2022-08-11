@@ -9,13 +9,12 @@ app.use(express.static(path.join(__dirname)));
 
 // viewed at based directory http://localhost:8080/
 app.get('/', function (req, res) {
-    console.log(__dirname);
   res.sendFile(path.join(__dirname + '/index.html'));
 });
 
-// add other routes below
-// app.get('/about', function (req, res) {
-//   res.sendFile(path.join(__dirname + 'views/about.html'));
-// });
+app.get('/.well-known/apple-app-site-association', function (req, res) {
+  res.setHeader('content-type', 'application/json');
+  res.sendFile(path.join(__dirname + '/.well-known/apple-app-site-association'));
+});
 
 app.listen(process.env.PORT || 7777);
