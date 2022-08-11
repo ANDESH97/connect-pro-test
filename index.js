@@ -13,7 +13,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/.well-known/apple-app-site-association', function (req, res) {
-  res.setHeader('content-type', 'application/json');
+  res.setHeader('Content-Type', 'application/json');
   res.sendFile(path.join(__dirname + '/.well-known/apple-app-site-association'));
 });
 
