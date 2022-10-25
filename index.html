@@ -10,7 +10,10 @@
 
 <body>
 
-    <button onclick="setCookie()">
+    <button onclick="launchIosUniversalLink('abcd0987')">
+        launch iOS Universal Link
+    </button>
+    <!-- <button onclick="setCookie()">
         Set Cookie
     </button>
 
@@ -20,53 +23,57 @@
 
     <button onclick="deleteCookie()">
         Delete Cookie
-    </button>
+    </button> -->
 
     <script>
 
-        function setCookie() {
-            console.log("setting cookies");
+    function launchIosUniversalLink(exchangeCode) {
+      console.log(exchangeCode);
+    }
 
-            document.cookie = "username=Ankit Deshmukh; expires=Thu, 29 Dec 2022 12:00:00 UTC; path=/";
+        // function setCookie() {
+        //     console.log("setting cookies");
 
-            alert("Added cookie: username = Ankit Deshmukh");
-        }
+        //     document.cookie = "username=Ankit Deshmukh; expires=Thu, 29 Dec 2022 12:00:00 UTC; path=/";
 
-        function readCookie() {
+        //     alert("Added cookie: username = Ankit Deshmukh");
+        // }
 
-            console.log(document.cookie);
+        // function readCookie() {
 
-            let name = "username=";
-            let decodedCookie = decodeURIComponent(document.cookie);
-            let ca = decodedCookie.split(';');
-            for (let i = 0; i < ca.length; i++) {
-                let c = ca[i];
-                while (c.charAt(0) == ' ') {
-                    c = c.substring(1);
-                }
-                if (c.indexOf(name) == 0) {
-                    return c.substring(name.length, c.length);
-                }
-            }
-            return "";
-        }
+        //     console.log(document.cookie);
 
-        function checkCookie() {
-            let username = readCookie();
-            if (username != "") {
-                alert("Welcome " + username);
-            } else {
-                username = prompt("Please enter your name:", "");
-                if (username != "" && username != null) {
-                    setCookie();
-                }
-            }
-        }
+        //     let name = "username=";
+        //     let decodedCookie = decodeURIComponent(document.cookie);
+        //     let ca = decodedCookie.split(';');
+        //     for (let i = 0; i < ca.length; i++) {
+        //         let c = ca[i];
+        //         while (c.charAt(0) == ' ') {
+        //             c = c.substring(1);
+        //         }
+        //         if (c.indexOf(name) == 0) {
+        //             return c.substring(name.length, c.length);
+        //         }
+        //     }
+        //     return "";
+        // }
 
-        function deleteCookie() {
-            console.log("deleting cookie");
-            document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-        }
+        // function checkCookie() {
+        //     let username = readCookie();
+        //     if (username != "") {
+        //         alert("Welcome " + username);
+        //     } else {
+        //         username = prompt("Please enter your name:", "");
+        //         if (username != "" && username != null) {
+        //             setCookie();
+        //         }
+        //     }
+        // }
+
+        // function deleteCookie() {
+        //     console.log("deleting cookie");
+        //     document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        // }
 
     </script>
 
